@@ -895,14 +895,18 @@ h1 span {
         border-color 0.8s ease;
 }
 
+
 .birthday-letter.is-visible {
     opacity: 1;
     transform: translateY(0);
-    max-height: 3000px;
+    max-height: none;
+    height: auto;
+    overflow: visible;
     padding: clamp(25px, 6vw, 55px);
     margin: 5px auto 40px;
     border-color: #EAD9D5;
 }
+
 
 .letter-date {
     color: var(--muted);
@@ -1811,4 +1815,28 @@ a:focus-visible {
         overflow: visible;
         overflow-wrap: anywhere;
     }
+}
+
+/* FIX: FULL BIRTHDAY LETTER — PAGE 3 ONLY */
+
+body.letter-body .birthday-letter {
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+}
+
+body.letter-body .birthday-letter.is-visible {
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+}
+
+body.letter-body .birthday-letter.is-visible p {
+    overflow: visible !important;
+}
+
+body.letter-body .letter-page {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
 }
