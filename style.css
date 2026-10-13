@@ -1754,3 +1754,14 @@ a:focus-visible {
         transform: translateY(0);
     }
 }
+
+/* FIX: Show the full birthday letter on phones */
+@media (max-width: 600px) {
+    .letter-paper {
+        height: auto !important;
+        min-height: 0;
+        max-height: none !important;
+        overflow: visible !important;
+        box-sizing: border-box;
+    }
+}
