@@ -1765,3 +1765,50 @@ a:focus-visible {
         box-sizing: border-box;
     }
 }
+
+/* FIX: Prevent the birthday letter from being cut off */
+.birthday-letter {
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    overflow: visible;
+    box-sizing: border-box;
+}
+
+.birthday-letter p {
+    overflow: visible;
+}
+
+@media (max-width: 600px) {
+    .birthday-letter {
+        height: auto;
+        max-height: none;
+        overflow: visible;
+        padding-bottom: 30px;
+    }
+}
+
+/* FINAL FIX — SHOW THE ENTIRE BIRTHDAY LETTER */
+
+.birthday-letter.is-visible {
+    max-height: none !important;
+    height: auto !important;
+    min-height: 0;
+    overflow: visible !important;
+    box-sizing: border-box;
+}
+
+/* Keep the letter comfortable to read on phones */
+@media (max-width: 600px) {
+    .birthday-letter.is-visible {
+        width: 100%;
+        max-width: 650px;
+        padding: 25px 20px;
+        margin: 5px auto 40px;
+    }
+
+    .birthday-letter.is-visible p {
+        overflow: visible;
+        overflow-wrap: anywhere;
+    }
+}
